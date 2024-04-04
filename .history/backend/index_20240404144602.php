@@ -43,13 +43,9 @@ $router->post('/', function(){
 });
 
 $router->delete('/{id}', function($id){
-    $alumno= R::trash('alumnos', $id);
-
-    header('Access-Control-Allow-Origin: *');
-    header('Content-Type: application/json');
-
+    $alumno= R::load('alumnos', $id);
     print_r($alumno);
-
+    
 });
 
 $router->run();

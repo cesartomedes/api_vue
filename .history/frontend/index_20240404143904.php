@@ -52,10 +52,6 @@
                 };
 
                 const eliminarAlumno = async  (id) => {
-                   await axios.delete(`${apiUrl}/${id}`);
-                   obtenerAlumnos();
-                };
-
                 const crearAlumno = async () => {
                     try {
                         const respuesta = await axios.post(apiUrl, nuevoAlumno.value);
@@ -70,7 +66,7 @@
                     obtenerAlumnos();
                 });
                 return {
-                    alumnos, crearAlumno, nuevoAlumno, eliminarAlumno
+                    alumnos, crearAlumno, nuevoAlumno
                 };
             }
         });

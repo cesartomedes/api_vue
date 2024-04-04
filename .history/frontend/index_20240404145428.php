@@ -70,7 +70,7 @@
                     obtenerAlumnos();
                 });
                 return {
-                    alumnos, crearAlumno, nuevoAlumno, eliminarAlumno
+                    alumnos, crearAlumno, nuevoAlumno, 
                 };
             }
         });
