@@ -36,6 +36,7 @@ $router->post('/', function(){
     $alumno->apellidos=$data['apellidos'];
     $idAlumno=R::store($alumno);
     
+    // enviamos el id del
 
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');

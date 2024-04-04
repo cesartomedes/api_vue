@@ -32,11 +32,7 @@ $router->post('/', function(){
     $data = json_decode(file_get_contents('php://input'), true);
 
     $alumno= R::dispense('alumnos');
-    $alumno->nombres=$data['nombres'];
-    $alumno->apellidos=$data['apellidos'];
-    $idAlumno=R::store($alumno);
-    
-
+    $alumno->nombres=$data[]
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
     print_r($data);

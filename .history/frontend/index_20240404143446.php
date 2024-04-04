@@ -25,7 +25,7 @@
         <ul>
             <li v-for="alumno in alumnos" :key="alumno.id">
                 {{ alumno.nombres }} - {{ alumno.apellidos }}
-                <button @click="eliminarAlumno(alumno.id)">Eliminar</button>
+                <button @click="eliminarAlumno(alumno)">Elim
             </li>
         </ul>
 

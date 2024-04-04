@@ -34,8 +34,7 @@ $router->post('/', function(){
     $alumno= R::dispense('alumnos');
     $alumno->nombres=$data['nombres'];
     $alumno->apellidos=$data['apellidos'];
-    $idAlumno=R::store($alumno);
-    
+    $idAlumno=R::
 
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');

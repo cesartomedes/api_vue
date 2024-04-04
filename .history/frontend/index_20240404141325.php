@@ -25,7 +25,6 @@
         <ul>
             <li v-for="alumno in alumnos" :key="alumno.id">
                 {{ alumno.nombres }} - {{ alumno.apellidos }}
-                <button @click="eliminarAlumno(alumno.id)">Eliminar</button>
             </li>
         </ul>
 
@@ -56,7 +55,7 @@
                         const respuesta = await axios.post(apiUrl, nuevoAlumno.value);
                         alumnos.value.push(respuesta.data);
                         nuevoAlumno.value = { nombres: "", apellidos: "" };
-                        obtenerAlumnos();
+                        console.log(respuesta);
                     } catch (error) {
                         console.log("Error al crear el alumno", error)
                     }

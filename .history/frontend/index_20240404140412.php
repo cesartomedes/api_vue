@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -25,7 +25,6 @@
         <ul>
             <li v-for="alumno in alumnos" :key="alumno.id">
                 {{ alumno.nombres }} - {{ alumno.apellidos }}
-                <button @click="eliminarAlumno(alumno.id)">Eliminar</button>
             </li>
         </ul>
 
@@ -51,12 +50,12 @@
                     alumnos.value = respuesta.data;
                 };
 
+
                 const crearAlumno = async () => {
                     try {
                         const respuesta = await axios.post(apiUrl, nuevoAlumno.value);
                         alumnos.value.push(respuesta.data);
                         nuevoAlumno.value = { nombres: "", apellidos: "" };
-                        obtenerAlumnos();
                     } catch (error) {
                         console.log("Error al crear el alumno", error)
                     }

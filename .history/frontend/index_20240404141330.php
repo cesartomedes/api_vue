@@ -25,7 +25,6 @@
         <ul>
             <li v-for="alumno in alumnos" :key="alumno.id">
                 {{ alumno.nombres }} - {{ alumno.apellidos }}
-                <button @click="eliminarAlumno(alumno.id)">Eliminar</button>
             </li>
         </ul>
 
@@ -56,7 +55,7 @@
                         const respuesta = await axios.post(apiUrl, nuevoAlumno.value);
                         alumnos.value.push(respuesta.data);
                         nuevoAlumno.value = { nombres: "", apellidos: "" };
-                        obtenerAlumnos();
+                        con respecto a la api, cuando coloco un registro si lo registra solo que al principio aparece en blanco, entonces le tengo que hacer f5 para que aparezca solo eso que puede ser?
                     } catch (error) {
                         console.log("Error al crear el alumno", error)
                     }
