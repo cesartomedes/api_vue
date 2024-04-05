@@ -34,17 +34,6 @@
 
                 </div>
                 <div class="col-6">
-                
-            <h2>Alumnos en la base de datos</h2>
-            <ul class="list-group">
-                <li class="list-group-item d-flex align-items-center" v-for="alumno in alumnos" :key="alumno.id">
-                    <button class="btn btn-danger" @click="eliminarAlumno(alumno.id)">Eliminar</button>
-                    &nbsp; &nbsp;
-                    {{ alumno.nombres }} - {{ alumno.apellidos }}
-                </li>
-            </ul>
-
-        </div>
 
                 </div>
             </div>

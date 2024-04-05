@@ -15,39 +15,31 @@
     <div id="app">
         <div class="container">
 
-            <div class="row">
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-header">Alumnos</div>
-                        <div class="card-body">
-                            <form @submit.prevent="crearAlumno">
-                                Nombre:
-                                <input type="text" class="form-control" name="nombres" v-model="nuevoAlumno.nombres" id="nombres" required>
-                                Apellido:
-                                <input type="text" class="form-control" name="apellidos" v-model="nuevoAlumno.apellidos" id="apellidos" required>
-                                <button class="btn btn-success mt-2" type="submit">Agregar Alumno</button>
+            <div class="card">
+                <div class="card-header">Alumnos</div>
+                <div class="card-body">
+                    <form @submit.prevent="crearAlumno">
+                        Nombre:
+                        <input type="text" class="form-control" name="nombres" v-model="nuevoAlumno.nombres" id="nombres">
+                        Apellido:
+                        <input type="text" class="form-control"  name="apellidos" v-model="nuevoAlumno.apellidos" id="apellidos">
+                        <button class="btn btn-success pb" type="submit">Agregar Alumno</button>
 
-                            </form>
-                        </div>
-                        <div class="card-footer text-muted"></div>
-                    </div>
-
+                    </form>
                 </div>
-                <div class="col-6">
-                
-            <h2>Alumnos en la base de datos</h2>
-            <ul class="list-group">
-                <li class="list-group-item d-flex align-items-center" v-for="alumno in alumnos" :key="alumno.id">
-                    <button class="btn btn-danger" @click="eliminarAlumno(alumno.id)">Eliminar</button>
-                    &nbsp; &nbsp;
+                <div class="card-footer text-muted"></div>
+            </div>
+
+            <ul>
+                <li v-for="alumno in alumnos" :key="alumno.id">
                     {{ alumno.nombres }} - {{ alumno.apellidos }}
+                    <button @click="eliminarAlumno(alumno.id)">Eliminar</button>
                 </li>
             </ul>
 
         </div>
 
-                </div>
-            </div>
+
     </div>
     <script>
         const {

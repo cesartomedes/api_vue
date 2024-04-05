@@ -34,7 +34,14 @@
 
                 </div>
                 <div class="col-6">
-                
+
+                </div>
+
+            </div>
+
+
+
+
             <h2>Alumnos en la base de datos</h2>
             <ul class="list-group">
                 <li class="list-group-item d-flex align-items-center" v-for="alumno in alumnos" :key="alumno.id">
@@ -46,8 +53,7 @@
 
         </div>
 
-                </div>
-            </div>
+
     </div>
     <script>
         const {
