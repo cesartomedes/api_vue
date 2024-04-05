@@ -11,15 +11,14 @@ R::setup('mysql:host=localhost;dbname=aplicacion', 'ceto', '123456789');
 // Create Router instance
 $router = new \Bramus\Router\Router();
 
-$router->options('.*', function () {
+$router->options('.*', function(){
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
     header('Access-Control-Allow-Headers:Content-Type, Authorization, X-Requested-with');
     exit();
 });
 
-function jsonResponse($data)
-{
+function jsonResponse($data){
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
     echo json_encode($data);
@@ -29,21 +28,24 @@ function jsonResponse($data)
 $router->get('/', function () {
     $alumnos = R::find('alumnos');
     jsonResponse(R::exportAll($alumnos));
+  
 });
 
 // agregar alumnos
-$router->post('/', function () {
+$router->post('/', function(){
     $data = json_decode(file_get_contents('php://input'), true);
-    $alumno = R::dispense('alumnos');
-    $alumno->nombres = $data['nombres'];
-    $alumno->apellidos = $data['apellidos'];
-    $idAlumno = R::store($alumno);
+
+    $alumno= R::dispense('alumnos');
+    $alumno->nombres=$data['nombres'];
+    $alumno->apellidos=$data['apellidos'];
+    $idAlumno=R::store($alumno);
     jsonResponse(["mensaje" => "alumno agregado", "id" => $idAlumno]);
 });
 
-$router->delete('/{id}', function ($id) {
-    $alumno = R::trash('alumnos', $id);
-    jsonResponse(["mensaje" => "alumno eliminado"]);
+$router->delete('/{id}', function($id){
+    $alumno= R::trash('alumnos', $id);
+    json
+
 });
 
 $router->run();
